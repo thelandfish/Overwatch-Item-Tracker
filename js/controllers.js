@@ -64,7 +64,7 @@ OWI.controller('MainCtrl', ["$rootScope", "$q", "$document", "$uibModal", "DataS
 
   this.openSettings = function() {
     $uibModal.open({
-      templateUrl: './templates/modals/settings.html',
+      templateUrl: 'templates/modals/settings.html',
       controller: 'SettingsCtrl',
       controllerAs: 'settings'
     });
@@ -72,7 +72,7 @@ OWI.controller('MainCtrl', ["$rootScope", "$q", "$document", "$uibModal", "DataS
 
   this.openAbout = function() {
     $uibModal.open({
-      templateUrl: './templates/modals/about.html',
+      templateUrl: 'templates/modals/about.html',
       controller: 'SettingsCtrl',
       controllerAs: 'settings'
     });
@@ -80,7 +80,7 @@ OWI.controller('MainCtrl', ["$rootScope", "$q", "$document", "$uibModal", "DataS
 
   this.openTheme = function() {
     $uibModal.open({
-      templateUrl: './templates/modals/themes.html',
+      templateUrl: 'templates/modals/themes.html',
       controller: 'SettingsCtrl',
       controllerAs: 'settings'
     });
@@ -162,12 +162,12 @@ OWI.controller('SettingsCtrl', ["$rootScope", "$uibModalInstance", "StorageServi
     for (var heroID in DataService.heroes) {
       var hero = DataService.heroes[heroID].items
       for (var type in hero) {
-        for (var item of hero[type]) {
+        hero[type].forEach(function(item) {
           if (!DataService.checked[heroID][type]) {
             DataService.checked[heroID][type] = {}
           }
           DataService.checked[heroID][type][item.id] = true
-        }
+        })
       }
     }
 

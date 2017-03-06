@@ -191,9 +191,9 @@ OWI.run(function() {
 OWI.run(function() {
   var settings = angular.fromJson(localStorage.getItem('settings')) || {};
   var theme = settings.currentTheme || 'standard';
-  var styles = ['events.css']
+  var styles = ['events.min.css']
   styles.forEach(function(style) {
-    var url = './css/' + (theme == 'standard' ? style : 'themes/' + theme + '/' + style)
+    var url = '../css/' + (theme == 'standard' ? style : 'themes/' + theme + '/' + style)
     var newElm = document.createElement('link');
     newElm.rel = "stylesheet";
     newElm.href = url;
@@ -226,11 +226,11 @@ OWI.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
     },
     views: {
       main: {
-        templateUrl: './templates/hero.html',
+        templateUrl: 'templates/hero.html',
         controller: 'HeroesCtrl as hero'
       },
       header: {
-        templateUrl: './templates/header-hero.html'
+        templateUrl: 'templates/header-hero.html'
       }
     }
   })
@@ -253,10 +253,10 @@ OWI.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
     },
     views: {
       header: {
-        templateUrl: './templates/header-event.html'
+        templateUrl: 'templates/header-event.html'
       },
       main: {
-        templateUrl: './templates/event-container.html',
+        templateUrl: 'templates/event-container.html',
         controller: 'UpdateCtrl'
       }
     }
@@ -275,7 +275,7 @@ OWI.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
     },
     views: {
       main: {
-        templateUrl: './templates/home.html'
+        templateUrl: 'templates/home.html'
       }
     }
   })

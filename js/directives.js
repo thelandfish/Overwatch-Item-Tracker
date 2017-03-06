@@ -35,7 +35,7 @@ OWI.directive('eventItem', function() {
   return {
     restrict: 'E',
     replace: true,
-    templateUrl: './templates/event-item.html',
+    templateUrl: 'templates/event-item.html',
     link: function($scope, $elm, $attr) {
       $scope.type = $attr.type;
       $scope.noHero = $attr.nohero;
@@ -64,7 +64,7 @@ OWI.directive('tooltipImagePreview', ["StorageService", function(StorageService)
       hero: '=hero',
       supportsWebM: '=support'
     },
-    templateUrl: './templates/tooltip-image-preview.html',
+    templateUrl: 'templates/tooltip-image-preview.html',
     link: function($scope) {
       var item = angular.copy($scope.item);
       item.type = $scope.type;
@@ -86,7 +86,7 @@ OWI.directive('legendarySkins', function() {
   return {
     restrict: 'E',
     replace: true,
-    templateUrl: './templates/legendary-skins.html',
+    templateUrl: 'templates/legendary-skins.html',
     link: function($scope, $elm, $attr) {
       $scope.ss = $attr.ss
       $scope.ssURL = $attr.ssurl
@@ -98,7 +98,7 @@ OWI.directive('subHeader', function() {
   return {
     restrict: 'E',
     replace: true,
-    templateUrl: './templates/sub-header.html'
+    templateUrl: 'templates/sub-header.html'
   }
 })
 
@@ -106,7 +106,7 @@ OWI.directive('heroNav', function() {
   return {
     restrict: 'E',
     replace: true,
-    templateUrl: './templates/hero-nav.html'
+    templateUrl: 'templates/hero-nav.html'
   }
 })
 
